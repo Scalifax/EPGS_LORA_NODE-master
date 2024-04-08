@@ -1,0 +1,32 @@
+idf_component_register(
+			SRCS
+				"epgs/epgs.c"
+				"epgs/epgs_wrapper.c"
+				"epgs/runepgs.c"
+				"epgs/Actions/epgs_exposition.c"
+				"epgs/Actions/epgs_hello.c"
+				"epgs/Actions/epgs_pubNotify.c"
+				"epgs/Actions/epgs_subServiceAcceptance.c"
+				"epgs/Common/MurmurHash3.c"
+				"epgs/Common/ng_command.c"
+				"epgs/Common/ng_epgs_hash.c"
+				"epgs/Common/ng_hash_table.c"
+				"epgs/Common/ng_message.c"
+				"epgs/Controller/epgs_controller.c"
+				"epgs/DataStructures/epgs_structures.c"
+				"epgs/Network/PG.c"
+				"epgs/ng_util/ng_json.c"
+				"epgs/ng_util/ng_util.c"
+				"lora/lora.c"
+				
+			INCLUDE_DIRS
+				"epgs/Actions"
+				"epgs/Common"
+				"epgs/Controller"
+				"epgs/DataStructures"
+				"epgs/Network"
+				"epgs/ng_util"
+				"epgs/"
+				"lora/include"
+			
+			)
