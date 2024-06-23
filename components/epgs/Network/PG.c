@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include "runepgs.h"
 #include <string.h>
+
 //#include "vcom.h"
 //#include "cmsis_os.h"
 
@@ -161,7 +162,7 @@ int sendNGMessage(NgEPGS* ngEPGS, NgMessage* message, bool isBroadcast) {
 //		vTaskDelay((200 + (ng_rand()%300))/ portTICK_PERIOD_MS);
 		vTaskDelayUntil( &msg_tick_time, 1000/portTICK_PERIOD_MS );
 		printf("\n->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
-		printf("\nNG FRAG SENT / TICK->%u / SIZE->%u / ID->%08X / SEQ->%u\n", xTaskGetTickCount()*portTICK_PERIOD_MS, index, MessageNumber, SequenceNumber-1);
+		printf("\nNG FRAG SENT / TICK->%lu / SIZE->%u / ID->%08X / SEQ->%u\n", xTaskGetTickCount()*portTICK_PERIOD_MS, index, MessageNumber, SequenceNumber-1);
 		if(SequenceNumber-1==0)
 		{
 			for(int k = 0; k < 30; k++)
@@ -238,7 +239,7 @@ int newMessageReceived(struct _ng_epgs **ngEPGS, const char* message, int rcvdMs
 	bool b = false;
 
 	printf("\n<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-");
-	printf("\nNG FRAG RECEIVED / TICK->%u / SIZE->%u / ID->%08X / SEQ->%u\n", xTaskGetTickCount()*portTICK_PERIOD_MS, rcvdMsgSize, msgSeq, msgNumber);
+	printf("\nNG FRAG RECEIVED / TICK->%lu / SIZE->%u / ID->%08X / SEQ->%u\n", xTaskGetTickCount()*portTICK_PERIOD_MS, rcvdMsgSize, msgSeq, msgNumber);
 	if(message[21]==0)
 	{
 		for(int k = 0; k < 30; k++)

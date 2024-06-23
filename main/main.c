@@ -1,11 +1,12 @@
-#include "runepgs.h"
 #include <stdio.h>
+#include "runepgs.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_timer.h"
 #include "esp_log.h"
 
 static const char* TAG = "epgs-lora-node";
+
 //extern SemaphoreHandle_t xSemaphore;
 esp_timer_handle_t periodic_timer;
 
@@ -73,14 +74,16 @@ void app_main()
 	lora_set_bandwidth(250e3);
 	lora_set_spreading_factor(7);
 	lora_enable_crc();
+
 	xSemaphore = xSemaphoreCreateMutex();
 	if( xSemaphore == NULL )
 	{
-		ESP_LOGI(TAG, "N�o consegui criar o sem�foro :(");
+		ESP_LOGI(TAG, "--Erro Creating the Semaphore--");
 	}
 	else
 	{
-		ESP_LOGI(TAG, "Consegui criar o sem�foro :)");
+		ESP_LOGI(TAG, "--Semaphore Created");
 	}
-	xTaskCreatePinnedToCore(&task_tx, "task_tx", 60480, NULL, 5, task_tx_handle,0);
+
+	xTaskCreatePinnedToCore(&task_tx, "task_tx", 60480, NULL, 5, task_tx_handle, 0);
 }

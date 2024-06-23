@@ -4,7 +4,15 @@
         "runepgs.h": "c",
         "task.h": "c",
         "semphr.h": "c",
-        "freertos.h": "c"
+        "freertos.h": "c",
+        "cstdint": "c",
+        "epgs_wrapper.h": "c",
+        "stdio.h": "c",
+        "epgs_structures.h": "c"
     },
-    "idf.port": "/dev/ttyUSB1"
+    "idf.port": "/dev/ttyUSB1",
+    "idf.openOcdConfigs": [
+        "board/esp32-bridge.cfg"
+    ],
+    "idf.flashType": "UART"
 }

@@ -7,6 +7,7 @@
 
 #ifndef RUNEPGS_H_
 #define RUNEPGS_H_
+
 #include "epgs.h"
 #include "DataStructures/epgs_structures.h"
 #include "epgs_wrapper.h"
@@ -16,7 +17,7 @@
 #include "freertos/task.h"
 #include "lora.h"
 
-SemaphoreHandle_t xSemaphore;
+extern SemaphoreHandle_t xSemaphore;
 
 enum CHPERMISSIONS
 {
@@ -25,15 +26,15 @@ enum CHPERMISSIONS
 	RECEIVING,
 };
 
-NgEPGS *tagNgEPGS;
+extern NgEPGS *tagNgEPGS;
 
-int dataPSize;
+extern int dataPSize;
 
-TaskHandle_t task_tx_handle, task_rx_handle;
+extern TaskHandle_t task_tx_handle, task_rx_handle;
 
-int Count;
+extern int Count;
 
-char *dataP;
+extern char *dataP;
 
 void startepgs(void);
 
@@ -47,16 +48,16 @@ int lora_rx_msg(uint8_t *buf, int size);
 
 void lora_tx_msg(uint8_t *buf, int size);
 
-uint16_t medida;
+extern uint16_t medida;
 
-uint16_t temperatura;
+extern uint16_t temperatura;
 
-uint8_t seq;
+extern uint8_t seq;
 
-uint8_t flagstart;
+extern uint8_t flagstart;
 
-uint8_t TXPermission;
+extern uint8_t TXPermission;
 
-uint8_t cont;
+extern uint8_t cont;
 
 #endif /* RUNEPGS_H_ */

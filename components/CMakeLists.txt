@@ -18,7 +18,7 @@ idf_component_register(
 				"epgs/ng_util/ng_json.c"
 				"epgs/ng_util/ng_util.c"
 				"lora/lora.c"
-				
+
 			INCLUDE_DIRS
 				"epgs/Actions"
 				"epgs/Common"

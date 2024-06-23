@@ -2,20 +2,36 @@
  * Programa de Testes do EPGS
  */
 
-
 #include "epgs_wrapper.h"
 #include "Common/ng_hash_table.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include "runepgs.h"
 #include <string.h>
+#include <stdint.h>
+
+SemaphoreHandle_t xSemaphore = NULL;
+NgEPGS *tagNgEPGS = NULL;
+int dataPSize = 0;
+TaskHandle_t task_tx_handle = NULL;
+TaskHandle_t task_rx_handle = NULL;
+int Count = 0;
+char *dataP = NULL;
+uint16_t medida = 0;
+uint16_t temperatura = 0;
+uint8_t seq = 0;
+uint8_t flagstart = 0;
+uint8_t TXPermission = 0;
+uint8_t cont = 0;
 
 const char ucIdentify[] = {"3c:71:bf:fc:b8:c8"}; //GW_Station
-//const char ucIdentify[] = {"24:6f:28:22:2c:84"}; EPGS
+
+//const char ucIdentify[] = {"24:6f:28:22:2c:84"};
 //const char ucIdentify[] = {"d8:a0:1d:4a:4a:e8"};
 //const char ucIdentify[] = {"24:6f:28:22:2c:84"};
 //char ucIdentify[] = {"24:6F:28:22:2C:84"};
 //char ucIdentify[] = {"00:23:a7:23:06:66"};
+
 const char ucHID[] = {"12345"};
 const char ucSOID[] = {"NG_SO"};
 const char ucName[] = {"Measures_B_"};

@@ -98,6 +98,7 @@ int processLoop(NgEPGS **ngEPGS) {
 //	}
 //
 //	(*ngEPGS)->LoopCounter = 0;
+
 	char ucFile[100];
 	char ucBufferName[200];
 	switch((*ngEPGS)->ngState) {
