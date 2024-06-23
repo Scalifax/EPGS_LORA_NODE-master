@@ -28,5 +28,5 @@ idf_component_register(
 				"epgs/ng_util"
 				"epgs/"
 				"lora/include"
-			
+				"/home/alberti/esp/v5.0.6/esp-idf/components/driver/include"
 			)

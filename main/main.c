@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-
 #include "esp_timer.h"
 #include "esp_log.h"
+
 static const char* TAG = "epgs-lora-node";
 //extern SemaphoreHandle_t xSemaphore;
 esp_timer_handle_t periodic_timer;
