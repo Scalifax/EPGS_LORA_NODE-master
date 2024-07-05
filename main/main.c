@@ -78,11 +78,11 @@ void app_main()
 	xSemaphore = xSemaphoreCreateMutex();
 	if( xSemaphore == NULL )
 	{
-		ESP_LOGI(TAG, "--Erro Creating the Semaphore--");
+		ESP_LOGI(TAG, "--ERRO: Semaphore failed--");
 	}
 	else
 	{
-		ESP_LOGI(TAG, "--Semaphore Created");
+		ESP_LOGI(TAG, "--Semaphore created--");
 	}
 
 	xTaskCreatePinnedToCore(&task_tx, "task_tx", 60480, NULL, 5, task_tx_handle, 0);

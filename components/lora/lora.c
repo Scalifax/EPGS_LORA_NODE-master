@@ -1,4 +1,3 @@
-
 #include "sdkconfig.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -499,4 +498,3 @@ lora_dump_registers(void)
    }
    printf("\n");
 }
-
