@@ -24,14 +24,7 @@ uint8_t flagstart = 0;
 uint8_t TXPermission = 0;
 uint8_t cont = 0;
 
-const char ucIdentify[] = {"3c:71:bf:fc:b8:c8"}; //GW_Station
-
-//const char ucIdentify[] = {"24:6f:28:22:2c:84"};
-//const char ucIdentify[] = {"d8:a0:1d:4a:4a:e8"};
-//const char ucIdentify[] = {"24:6f:28:22:2c:84"};
-//char ucIdentify[] = {"24:6F:28:22:2C:84"};
-//char ucIdentify[] = {"00:23:a7:23:06:66"};
-
+const char ucIdentify[] = {"e0:e2:e6:00:71:0c"}; //GW_Station
 const char ucHID[] = {"12345"};
 const char ucSOID[] = {"NG_SO"};
 const char ucName[] = {"Measures_B_"};
